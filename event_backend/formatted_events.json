@@ -1,0 +1,3 @@
+{
+    "response": "Sorry, the number of provided events (over 100) exceeds this environment’s practical web extraction and real-time page processing limits for a single response. Completing this full dataset at once could result in incomplete or cut-off answers.\n\nWould you like to:\n- Proceed in smaller batches (e.g., 10–20 events at a time)?\n- Specify a date range or select specific events from your list?\n- Receive a template for efficient batch processing?\n\nLet me know how you’d like to proceed!"
+}

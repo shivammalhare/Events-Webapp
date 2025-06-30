@@ -1,0 +1,450 @@
+[
+    {
+        "event_name": "MongoDB.local Bengaluru",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "26/06/2025",
+        "description": "MongoDB.local Bengaluru is a one-day event featuring technical sessions, live demonstrations, and networking focused on MongoDB products and ecosystem.",
+        "sponsorship": "Sponsorship opportunities available. Details and prospectus: https://www.mongodb.com/local-events/bengaluru#sponsors",
+        "organizer": "MongoDB, Inc.",
+        "url": "https://dev.events/conferences/mongo-db-local-bengaluru-jvr4us1w",
+        "contact": {
+            "email": "events@mongodb.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Test Automation Summit | Bangalore",
+        "location": "Bangalore, Karnataka, India",
+        "Country": "India",
+        "date": "27/06/2025",
+        "description": "Test Automation Summit | Bangalore brings together automation professionals to discuss trends, best practices, and innovations in test automation.",
+        "sponsorship": "Information available via email or on event inquiry.",
+        "organizer": "1point21GWS",
+        "url": "https://dev.events/conferences/test-automation-summit-bangalore-pfaysiem",
+        "contact": {
+            "email": "contact@1point21gws.com",
+            "phone": "+91 8951677937"
+        }
+    },
+    {
+        "event_name": "VizChitra 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "27/06/2025",
+        "description": "VizChitra 2025 is a data visualization and analytics event bringing together analysts, scientists, and visualization experts to share insights and latest advancements.",
+        "sponsorship": "N/A",
+        "organizer": "SRM University-AP, Andhra Pradesh",
+        "url": "https://dev.events/conferences/viz-chitra-2025-uadeig79",
+        "contact": {
+            "email": "info@vizchitra.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "MongoDB.local Delhi",
+        "location": "New Delhi, Delhi, India",
+        "Country": "India",
+        "date": "01/07/2025",
+        "description": "MongoDB.local Delhi is a one-day event connecting local developers, technology leaders, and MongoDB experts in New Delhi for hands-on workshops, sessions, and networking.",
+        "sponsorship": "Sponsorship opportunities available. Details at: https://www.mongodb.com/local-events/new-delhi#sponsors",
+        "organizer": "MongoDB, Inc.",
+        "url": "https://dev.events/conferences/mongo-db-local-delhi-tlojc-hh",
+        "contact": {
+            "email": "events@mongodb.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "React Nexus",
+        "location": "Bangalore, Karnataka, India",
+        "Country": "India",
+        "date": "03/07/2025",
+        "description": "React Nexus is a conference series for JavaScript and frontend engineers focusing on React, React Native, and related technologies through talks, workshops, and networking.",
+        "sponsorship": "Sponsorship info: https://reactnexus.com/#sponsors",
+        "organizer": "React Nexus Community",
+        "url": "https://dev.events/conferences/react-nexus-huun3eh3",
+        "contact": {
+            "email": "contact@reactnexus.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Google Cloud Community Day Gandhinagar 2025",
+        "location": "Gandhinagar, Gujarat, India",
+        "Country": "India",
+        "date": "05/07/2025",
+        "description": "Google Cloud Community Day Gandhinagar 2025 is a gathering of cloud professionals, developers, and enthusiasts featuring sessions, workshops, and networking dedicated to Google Cloud technologies.",
+        "sponsorship": "N/A",
+        "organizer": "GDG Cloud Gandhinagar",
+        "url": "https://gdg.community.dev/events/details/google-gdg-cloud-gandhinagar-presents-google-cloud-community-day-gandhinagar-2025",
+        "contact": {
+            "email": "cloudgandhinagar@gmail.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "TribeQonf 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "11/07/2025",
+        "description": "TribeQonf 2025 focuses on quality engineering, automation, and technology trends. Industry experts share best practices and innovations through talks and workshops.",
+        "sponsorship": "Sponsorship details: https://thetesttribe.com/tribeqonf/#sponsors",
+        "organizer": "The Test Tribe",
+        "url": "https://dev.events/conferences/tribe-qonf-2025-x8llxycu",
+        "contact": {
+            "email": "contact@thetesttribe.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "BSides Bangalore 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "11/07/2025",
+        "description": "BSides Bangalore 2025 is an information security community-driven conference with talks, workshops, and networking for security professionals and researchers.",
+        "sponsorship": "Sponsorship info: https://www.bsidesbangalore.in/#sponsors",
+        "organizer": "BSides Bangalore Community",
+        "url": "https://dev.events/conferences/b-sides-bangalore-2025-kbcccylp",
+        "contact": {
+            "email": "info@bsidesbangalore.in",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Test Automation Summit | Hyderabad",
+        "location": "Hyderabad, Telangana, India",
+        "Country": "India",
+        "date": "17/07/2025",
+        "description": "Test Automation Summit | Hyderabad provides a platform for professionals to share insights and advancements in automation testing and quality engineering.",
+        "sponsorship": "Information available via email or on event inquiry.",
+        "organizer": "1point21GWS",
+        "url": "https://dev.events/conferences/test-automation-summit-hyderabad-yr6nmibr",
+        "contact": {
+            "email": "contact@1point21gws.com",
+            "phone": "+91 8951677937"
+        }
+    },
+    {
+        "event_name": "The Fifth Elephant 2025 Annual Conference",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "18/07/2025",
+        "description": "The Fifth Elephant 2025 is India's largest conference on data science, machine learning, AI, and data engineering, focused on applied knowledge and innovation.",
+        "sponsorship": "Sponsorship deck: https://fifthelephant.in/2025/sponsor",
+        "organizer": "HasGeek",
+        "url": "https://dev.events/conferences/the-fifth-elephant-2025-annual-conference-nvi2w0a",
+        "contact": {
+            "email": "info@hasgeek.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Cloud Community Days Kolkata 2025",
+        "location": "Kolkata, West Bengal, India",
+        "Country": "India",
+        "date": "19/07/2025",
+        "description": "Cloud Community Days Kolkata 2025 brings together cloud professionals, developers, architects, and enthusiasts for a day of learning, networking, and sharing insights about cloud computing and technology trends.",
+        "sponsorship": "Sponsorship information: https://cloudcommunitydays.com/kolkata2025/sponsors",
+        "organizer": "Cloud Community Days India",
+        "url": "https://dev.events/conferences/cloud-community-days-kolkata-2025-6sg0nxu9",
+        "contact": {
+            "email": "kolkata@cloudcommunitydays.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Test Automation Summit | Chennai",
+        "location": "Chennai, Tamil Nadu, India",
+        "Country": "India",
+        "date": "24/07/2025",
+        "description": "Test Automation Summit | Chennai shares knowledge and the latest developments in test automation, attracting QA and software professionals for talks and networking opportunities.",
+        "sponsorship": "Available via inquiry or on event request.",
+        "organizer": "1point21GWS",
+        "url": "https://dev.events/conferences/test-automation-summit-chennai-4vzviwqq",
+        "contact": {
+            "email": "contact@1point21gws.com",
+            "phone": "+91 8951677937"
+        }
+    },
+    {
+        "event_name": "Quantum India Bengaluru Summit 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "31/07/2025",
+        "description": "Quantum India Bengaluru Summit 2025 focuses on the latest advances in quantum computing, technologies, and their impact on business and research through expert sessions and panel discussions.",
+        "sponsorship": "Details available via event website.",
+        "organizer": "Quantum Ecosystems and Technology Council of India (QETCI)",
+        "url": "https://dev.events/conferences/quantum-india-bengaluru-summit-2025-oos3unf3",
+        "contact": {
+            "email": "info@qetci.org",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "OpenSSF Community Day India",
+        "location": "Hyderabad, Telangana, India",
+        "Country": "India",
+        "date": "04/08/2025",
+        "description": "OpenSSF Community Day India brings together open source security professionals and contributors to discuss best practices, goals, and industry initiatives for improving open source software security.",
+        "sponsorship": "Sponsorship opportunities: https://events.linuxfoundation.org/openssf-community-day-india/sponsor/",
+        "organizer": "OpenSSF & The Linux Foundation",
+        "url": "https://events.linuxfoundation.org/openssf-community-day-india",
+        "contact": {
+            "email": "events@linuxfoundation.org",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Open Source Summit India",
+        "location": "Hyderabad, Telangana, India",
+        "Country": "India",
+        "date": "05/08/2025",
+        "description": "Open Source Summit India is the premier event for open source developers, technologists, and community leaders to collaborate, share ideas, and learn about the latest trends in open source.",
+        "sponsorship": "Sponsorship opportunities: https://events.linuxfoundation.org/open-source-summit-india/sponsor/",
+        "organizer": "The Linux Foundation",
+        "url": "https://events.linuxfoundation.org/open-source-summit-india",
+        "contact": {
+            "email": "events@linuxfoundation.org",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "KubeCon + CloudNativeCon India 2025",
+        "location": "Hyderabad, Telangana, India",
+        "Country": "India",
+        "date": "06/08/2025",
+        "description": "KubeCon + CloudNativeCon India 2025 is a flagship conference for cloud native computing, bringing together adopters and technologists from leading open source and cloud native communities.",
+        "sponsorship": "Sponsorship info: https://events.linuxfoundation.org/kubecon-cloudnativecon-india-2025/sponsor/",
+        "organizer": "Cloud Native Computing Foundation (CNCF) & The Linux Foundation",
+        "url": "https://events.linuxfoundation.org/kubecon-cloudnativecon-india-2025",
+        "contact": {
+            "email": "events@cncf.io",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "KubeCon + CloudNativeCon India",
+        "location": "Hyderabad, Telangana, India",
+        "Country": "India",
+        "date": "06/08/2025",
+        "description": "KubeCon + CloudNativeCon India is the essential event for cloud native and Kubernetes professionals to exchange knowledge, attend keynotes, and participate in workshops and networking.",
+        "sponsorship": "Sponsorship info: https://events.linuxfoundation.org/kubecon-cloudnativecon-india/sponsor/",
+        "organizer": "Cloud Native Computing Foundation (CNCF) & The Linux Foundation",
+        "url": "https://events.linuxfoundation.org/kubecon-cloudnativecon-india",
+        "contact": {
+            "email": "events@cncf.io",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "GOTO Serverless",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "08/08/2025",
+        "description": "GOTO Serverless focuses on the latest advancements and best practices in serverless architectures, cloud computing, and emerging technologies through expert-led sessions and networking.",
+        "sponsorship": "N/A",
+        "organizer": "GOTO Conferences",
+        "url": "https://dev.events/conferences/goto-serverless-ucdgnmhs",
+        "contact": {
+            "email": "info@gotocon.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Information Technology Conference",
+        "location": "New Delhi, Delhi, India",
+        "Country": "India",
+        "date": "23/08/2025",
+        "description": "The Information Technology Conference in New Delhi gathers industry professionals to explore latest trends, technologies, and advancements in IT.",
+        "sponsorship": "N/A",
+        "organizer": "Institute of Research and Journals (IRAJ)",
+        "url": "https://dev.events/conferences/information-technology-conference-k8bbr-o",
+        "contact": {
+            "email": "info@iraj.in",
+            "phone": "+91-8280047516"
+        }
+    },
+    {
+        "event_name": "Frappeverse India",
+        "location": "Mumbai, Maharashtra, India",
+        "Country": "India",
+        "date": "11/09/2025",
+        "description": "Frappeverse India gathers ERPNext and Frappe framework enthusiasts, community members, and partners to network, share product knowledge, and discuss open-source ERP systems.",
+        "sponsorship": "Sponsorship details: https://frappe.io/frappeverse/india-2025#sponsors",
+        "organizer": "Frappe Technologies Pvt. Ltd.",
+        "url": "https://frappe.io/frappeverse/india-2025",
+        "contact": {
+            "email": "hello@frappe.io",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Security BSides Ahmedabad 2025",
+        "location": "Ahmedabad, Gujarat, India",
+        "Country": "India",
+        "date": "12/09/2025",
+        "description": "Security BSides Ahmedabad 2025 is a community-driven information security event providing a platform for security professionals, researchers, and enthusiasts to discuss emerging topics and share knowledge.",
+        "sponsorship": "Sponsorship details available at: https://bsidesahmedabad.in/#sponsors",
+        "organizer": "BSides Ahmedabad Community",
+        "url": "https://dev.events/conferences/security-b-sides-ahmedabad-2025-simhm0lk",
+        "contact": {
+            "email": "info@bsidesahmedabad.in",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "PyCon India 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "12/09/2025",
+        "description": "PyCon India 2025 is the annual gathering of Python enthusiasts in India, featuring talks, workshops, and networking opportunities for developers, data scientists, and open-source communities.",
+        "sponsorship": "See sponsorship details at: https://in.pycon.org/2025/sponsorship.html",
+        "organizer": "Python Software Foundation India",
+        "url": "https://in.pycon.org/2025",
+        "contact": {
+            "email": "contact@in.pycon.org",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "RubyConf India",
+        "location": "Jaipur, Rajasthan, India",
+        "Country": "India",
+        "date": "12/09/2025",
+        "description": "RubyConf India is the premier conference for Ruby practitioners and enthusiasts, bringing together industry experts, developers, and the open source community for two days of learning and collaboration.",
+        "sponsorship": "Sponsorship details: https://rubyconfindia.org/#sponsors",
+        "organizer": "Ruby Community India",
+        "url": "https://dev.events/conferences/rubyconf-india-ixd3xk4j",
+        "contact": {
+            "email": "contact@rubyconfindia.org",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "MongoDB.local Mumbai",
+        "location": "Mumbai, Maharashtra, India",
+        "Country": "India",
+        "date": "18/09/2025",
+        "description": "MongoDB.local Mumbai is a single-day event dedicated to MongoDB-related discussions, technical sessions, and networking opportunities for developers and IT leaders.",
+        "sponsorship": "Sponsorship opportunities: https://www.mongodb.com/local-events/mumbai#sponsors",
+        "organizer": "MongoDB, Inc.",
+        "url": "https://dev.events/conferences/mongo-db-local-mumbai-bnh5stl1",
+        "contact": {
+            "email": "events@mongodb.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "India FOSS 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "19/09/2025",
+        "description": "India FOSS 2025 is the annual flagship gathering of FOSS United and India's open-source community, featuring talks, workshops, and showcases of free and open-source software projects.",
+        "sponsorship": "Sponsorship deck: https://fossunited.org/indiafoss/2025#sponsor",
+        "organizer": "FOSS United Foundation",
+        "url": "https://fossunited.org/indiafoss/2025",
+        "contact": {
+            "email": "foundation@fossunited.org",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "apidays India 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "08/10/2025",
+        "description": "apidays India 2025 brings together API practitioners, developers, architects, and business leaders to discuss the API economy, trends, and best practices through sessions and workshops.",
+        "sponsorship": "Sponsorship details: https://www.apidays.global/sponsoring/",
+        "organizer": "apidays & API Collective",
+        "url": "https://confengine.com/conferences/apidays-india-2025",
+        "contact": {
+            "email": "contact@apidays.io",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "apidays India",
+        "location": "Bangalore, Karnataka, India",
+        "Country": "India",
+        "date": "08/10/2025",
+        "description": "apidays India convenes API experts and industry leaders to share API strategies, success stories, and technical best practices for organizations leveraging the API ecosystem.",
+        "sponsorship": "Sponsorship details: https://www.apidays.global/sponsoring/",
+        "organizer": "apidays & API Collective",
+        "url": "https://dev.events/conferences/apidays-india-31m7erax",
+        "contact": {
+            "email": "contact@apidays.io",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "OWASP AppSec Days Banglore 2025",
+        "location": "Bangalore, Karnataka, India",
+        "Country": "India",
+        "date": "18/10/2025",
+        "description": "OWASP AppSec Days Banglore 2025 focuses on application security and brings together professionals to learn about the latest in secure development and cybersecurity trends.",
+        "sponsorship": "Information available on request or via contact form.",
+        "organizer": "OWASP Bangalore Chapter",
+        "url": "https://dev.events/conferences/owasp-app-sec-days-banglore-2025-6b2zwbcz",
+        "contact": {
+            "email": "leaders-bangalore@owasp.org",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "DesignUp25",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "03/11/2025",
+        "description": "DesignUp25 brings together designers, technologists, researchers, and business professionals to share new perspectives on design, UX, innovation, and collaboration.",
+        "sponsorship": "Sponsorship prospectus: https://designup.io/sponsor",
+        "organizer": "DesignUp Community",
+        "url": "https://dev.events/conferences/design-up25-1gjrenyu",
+        "contact": {
+            "email": "team@designup.io",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Civo Navigate India 2025",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "18/11/2025",
+        "description": "Civo Navigate India 2025 is a Kubernetes and cloud native conference featuring talks from industry leaders, hands-on workshops, and networking opportunities for cloud professionals.",
+        "sponsorship": "Sponsorship packages: https://www.civo.com/navigate/india/2025#sponsorship",
+        "organizer": "Civo Ltd.",
+        "url": "https://www.civo.com/navigate/india/2025",
+        "contact": {
+            "email": "navigate@civo.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "India Blockchain Week Conference",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "01/12/2025",
+        "description": "India Blockchain Week (IBW) Conference is the flagship event that brings together global blockchain innovators, startups, enterprises, and policymakers to discuss advancements, real-world use cases, and the future of decentralized technologies.",
+        "sponsorship": "Sponsorship information and partnership opportunities: https://indiablockchainweek.com/sponsors",
+        "organizer": "India Blockchain Week (IBW)",
+        "url": "https://indiablockchainweek.com",
+        "contact": {
+            "email": "info@indiablockchainweek.com",
+            "phone": "N/A"
+        }
+    },
+    {
+        "event_name": "Great International Developer Summit",
+        "location": "Bengaluru, Karnataka, India",
+        "Country": "India",
+        "date": "21/04/2026",
+        "description": "The Great International Developer Summit (GIDS) is one of Asia's largest conferences for software professionals, covering a broad range of topics from architecture, APIs, devops, AI, to UX and agile development.",
+        "sponsorship": "Sponsorship opportunities and exhibitor info: https://www.developersummit.com/sponsors",
+        "organizer": "Saltmarch Media",
+        "url": "https://dev.events/conferences/great-international-developer-summit-jldsumca",
+        "contact": {
+            "email": "info@developersummit.com",
+            "phone": "+91-80-4170-8200"
+        }
+    }
+]
