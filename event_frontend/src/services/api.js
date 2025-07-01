@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://events-webapp.onrender.com/events';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://events-webapp.onrender.com/events';
 
 // Transform backend data to match UI expectations
 const transformEvent = (event, index) => ({
