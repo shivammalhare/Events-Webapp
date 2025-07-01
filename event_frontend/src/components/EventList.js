@@ -13,15 +13,20 @@ import {
   FormControl,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
+  Button
 } from '@mui/material';
 import EventCard from './EventCard';
+import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 const EventList = ({ events, loading, error, searchTerm }) => {
   const [filteredEvents, setFilteredEvents] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [eventType, setEventType] = useState('upcoming'); // Default to "upcoming"
   const [selectedCountry, setSelectedCountry] = useState('All'); // Country filter
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedMonth, setSelectedMonth] = useState(null);
   const eventsPerPage = 9; // 3 cards per row
 
   // Helper to parse DD/MM/YYYY to JS Date
@@ -66,9 +71,29 @@ const EventList = ({ events, loading, error, searchTerm }) => {
       return true;
     });
 
+    if (selectedDate) {
+      filtered = filtered.filter(event => {
+        const eventDate = parseEventDate(event.date);
+        return (
+          eventDate.getFullYear() === selectedDate.getFullYear() &&
+          eventDate.getMonth() === selectedDate.getMonth() &&
+          eventDate.getDate() === selectedDate.getDate()
+        );
+      });
+    }
+    if (selectedMonth) {
+      filtered = filtered.filter(event => {
+        const eventDate = parseEventDate(event.date);
+        return (
+          eventDate.getFullYear() === selectedMonth.getFullYear() &&
+          eventDate.getMonth() === selectedMonth.getMonth()
+        );
+      });
+    }
+
     setFilteredEvents(filtered);
     setCurrentPage(1);
-  }, [events, searchTerm, eventType, selectedCountry]);
+  }, [events, searchTerm, eventType, selectedCountry, selectedDate, selectedMonth]);
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
@@ -83,6 +108,13 @@ const EventList = ({ events, loading, error, searchTerm }) => {
 
   const handleCountryChange = (event) => {
     setSelectedCountry(event.target.value);
+  };
+
+  const handleClearFilters = () => {
+    setEventType('upcoming');
+    setSelectedCountry('All');
+    setSelectedDate(null);
+    setSelectedMonth(null);
   };
 
   // Pagination logic
@@ -112,20 +144,36 @@ const EventList = ({ events, loading, error, searchTerm }) => {
       <Box
         sx={{
           display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'flex-start',
           justifyContent: 'space-between',
-          alignItems: 'center',
-          mb: 3,
-          flexDirection: { xs: 'column', sm: 'row' },
+          mb: 4,
+          mt: 1,
           gap: 2
         }}
       >
-        <Typography variant="h5" component="h2" sx={{ fontWeight: 'bold' }}>
+        {/* Heading */}
+        <Typography
+          variant="h5"
+          component="h2"
+          sx={{ fontWeight: 'bold', mb: { xs: 2, sm: 0 }, minWidth: 120 }}
+        >
           {searchTerm ? `Search Results for "${searchTerm}"` : 'Events'}
         </Typography>
-        
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-          <Paper elevation={0} sx={{ p: 0.5 }}>
+
+        {/* Filters */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            gap: 2,
+          }}
+        >
+          {/* Event Type Toggle Buttons (no label) */}
+          <Paper elevation={0} sx={{ p: 0.5, boxShadow: 'none', background: 'none', minWidth: 180 }}>
             <ToggleButtonGroup
+              id="event-type-toggle"
               value={eventType}
               exclusive
               onChange={handleEventTypeChange}
@@ -143,6 +191,45 @@ const EventList = ({ events, loading, error, searchTerm }) => {
               </ToggleButton>
             </ToggleButtonGroup>
           </Paper>
+
+          {/* Date Filter */}
+          <FormControl size="small" sx={{ minWidth: 180 }}>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="Filter by Date"
+                value={selectedDate}
+                onChange={(newValue) => setSelectedDate(newValue)}
+                slotProps={{
+                  textField: {
+                    size: 'small',
+                    fullWidth: true,
+                    InputLabelProps: { shrink: true }
+                  }
+                }}
+              />
+            </LocalizationProvider>
+          </FormControl>
+
+          {/* Month Filter */}
+          <FormControl size="small" sx={{ minWidth: 180 }}>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                views={['year', 'month']}
+                label="Filter by Month"
+                value={selectedMonth}
+                onChange={(newValue) => setSelectedMonth(newValue)}
+                slotProps={{
+                  textField: {
+                    size: 'small',
+                    fullWidth: true,
+                    InputLabelProps: { shrink: true }
+                  }
+                }}
+              />
+            </LocalizationProvider>
+          </FormControl>
+
+          {/* Country Filter */}
           <FormControl size="small" sx={{ minWidth: 120 }}>
             <InputLabel id="country-select-label">Country</InputLabel>
             <Select
@@ -157,6 +244,16 @@ const EventList = ({ events, loading, error, searchTerm }) => {
               <MenuItem value="India">India</MenuItem>
             </Select>
           </FormControl>
+
+          {/* Clear Filters Button */}
+          <Button
+            variant="outlined"
+            size="small"
+            onClick={handleClearFilters}
+            sx={{ whiteSpace: 'nowrap', borderRadius: '24px', px: 2, height: 40 }}
+          >
+            Clear Filters
+          </Button>
         </Box>
       </Box>
 
