@@ -49,7 +49,7 @@ const Header = () => {
                 textDecoration: 'none',
               }}
             >
-              EVENT PLATFORM
+              REZO-EVENTS 
             </Typography>
 
             <EventIcon 
