@@ -31,11 +31,15 @@ const EventCard = ({ event }) => {
   const descRef = useRef(null);
 
   useEffect(() => {
-    if (descRef.current) {
-      // Check if the description overflows one line
-      setShowButton(descRef.current.scrollHeight > descRef.current.clientHeight);
-    }
-  }, [event.description]);
+    const checkOverflow = () => {
+      if (descRef.current) {
+        setShowButton(descRef.current.scrollHeight > descRef.current.clientHeight);
+      }
+    };
+    checkOverflow();
+    window.addEventListener('resize', checkOverflow);
+    return () => window.removeEventListener('resize', checkOverflow);
+  }, [event.description, expanded]);
 
   // Format the date
   const formatDate = (dateString) => {
@@ -104,28 +108,49 @@ const EventCard = ({ event }) => {
           </Box>
 
         {/* Description Clamp */}
-        <div
-          ref={descRef}
-          style={{
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            display: '-webkit-box',
-            WebkitLineClamp: expanded ? 'none' : 1,
-            WebkitBoxOrient: 'vertical',
-            minHeight: '1.5em'
-          }}
-        >
-          {event.description}
-        </div>
-        {showButton && (
-          <Button
-            size="small"
-            onClick={() => setExpanded((prev) => !prev)}
-            sx={{ mt: 1, p: 0, minHeight: 0, minWidth: 0 }}
-          >
-            {expanded ? 'Read less' : 'Read more'}
-          </Button>
-        )}
+        <Box
+  sx={{
+    display: 'flex',
+    alignItems: 'flex-start',
+    width: '100%',
+    gap: 1,
+    mb: 1,
+    flexWrap: { xs: 'wrap', sm: 'nowrap' }
+  }}
+>
+  <div
+    ref={descRef}
+    style={{
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      display: '-webkit-box',
+      WebkitLineClamp: expanded ? 'none' : 1,
+      WebkitBoxOrient: 'vertical',
+      minHeight: '1.5em',
+      flex: 1,
+      wordBreak: 'break-word'
+    }}
+  >
+    {event.description}
+  </div>
+  {showButton && (
+    <Button
+      size="small"
+      onClick={() => setExpanded((prev) => !prev)}
+      sx={{
+        p: 0,
+        minHeight: 0,
+        minWidth: 0,
+        ml: 1,
+        alignSelf: 'flex-start',
+        fontSize: '0.85em',
+        whiteSpace: 'nowrap'
+      }}
+    >
+      {expanded ? 'Read less' : 'Read more'}
+    </Button>
+  )}
+</Box>
           <Divider sx={{ my: 1 }} />
 
           {/* Footer with sponsorship, organizer, contact, etc */}
