@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -28,18 +28,25 @@ const EventCard = ({ event }) => {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [showButton, setShowButton] = useState(false);
-  const descRef = useRef(null);
+  const [charLimit, setCharLimit] = useState(160); // default for desktop
 
+  // Responsive CHAR_LIMIT
   useEffect(() => {
-    const checkOverflow = () => {
-      if (descRef.current) {
-        setShowButton(descRef.current.scrollHeight > descRef.current.clientHeight);
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setCharLimit(60); // mobile limit
+      } else {
+        setCharLimit(160); // desktop/tablet limit
       }
     };
-    checkOverflow();
-    window.addEventListener('resize', checkOverflow);
-    return () => window.removeEventListener('resize', checkOverflow);
-  }, [event.description, expanded]);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    setShowButton(event.description && event.description.length > charLimit);
+  }, [event.description, charLimit]);
 
   // Format the date
   const formatDate = (dateString) => {
@@ -109,48 +116,50 @@ const EventCard = ({ event }) => {
 
         {/* Description Clamp */}
         <Box
-  sx={{
-    display: 'flex',
-    alignItems: 'flex-start',
-    width: '100%',
-    gap: 1,
-    mb: 1,
-    flexWrap: { xs: 'wrap', sm: 'nowrap' }
-  }}
->
-  <div
-    ref={descRef}
-    style={{
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      display: '-webkit-box',
-      WebkitLineClamp: expanded ? 'none' : 1,
-      WebkitBoxOrient: 'vertical',
-      minHeight: '1.5em',
-      flex: 1,
-      wordBreak: 'break-word'
-    }}
-  >
-    {event.description}
-  </div>
-  {showButton && (
-    <Button
-      size="small"
-      onClick={() => setExpanded((prev) => !prev)}
-      sx={{
-        p: 0,
-        minHeight: 0,
-        minWidth: 0,
-        ml: 1,
-        alignSelf: 'flex-start',
-        fontSize: '0.85em',
-        whiteSpace: 'nowrap'
-      }}
-    >
-      {expanded ? 'Read less' : 'Read more'}
-    </Button>
-  )}
-</Box>
+          sx={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            width: '100%',
+            mb: 1,
+            minHeight: '1.5em',
+            gap: 1,
+          }}
+        >
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{
+              wordBreak: 'break-word',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              display: '-webkit-box',
+              WebkitLineClamp: expanded ? 'none' : 1,
+              WebkitBoxOrient: 'vertical',
+              flex: 1,
+            }}
+          >
+            {expanded || !showButton
+              ? event.description
+              : event.description.slice(0, charLimit) + (event.description.length > charLimit ? '…' : '')}
+          </Typography>
+          {showButton && !expanded && (
+            <Button
+              size="small"
+              onClick={() => setExpanded(true)}
+              sx={{
+                p: 0,
+                minHeight: 0,
+                minWidth: 0,
+                fontSize: '0.85em',
+                whiteSpace: 'nowrap',
+                ml: 1,
+                alignSelf: 'flex-start'
+              }}
+            >
+              Read more
+            </Button>
+          )}
+        </Box>
           <Divider sx={{ my: 1 }} />
 
           {/* Footer with sponsorship, organizer, contact, etc */}

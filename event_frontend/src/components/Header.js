@@ -73,7 +73,7 @@ const Header = () => {
                 textDecoration: 'none',
               }}
             >
-              EVENTS
+              REZO-EVENTS
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
