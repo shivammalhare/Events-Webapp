@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   Card,
   CardContent,
@@ -24,17 +24,18 @@ import LinkIcon from '@mui/icons-material/Link';
 import Linkify from 'linkify-react';
 
 
-const clampStyle = {
-  display: '-webkit-box',
-  WebkitLineClamp: 2,
-  WebkitBoxOrient: 'vertical',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  minHeight: '3em', // Enough for 2 lines
-};
-
 const EventCard = ({ event }) => {
   const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+  const descRef = useRef(null);
+
+  useEffect(() => {
+    if (descRef.current) {
+      // Check if the description overflows one line
+      setShowButton(descRef.current.scrollHeight > descRef.current.clientHeight);
+    }
+  }, [event.description]);
 
   // Format the date
   const formatDate = (dateString) => {
@@ -56,13 +57,6 @@ const EventCard = ({ event }) => {
     eventDate.setHours(0, 0, 0, 0);
     return eventDate >= today;
   };
-
-  // Show "Read More" if description is long
-  const isLongDescription = event.description && event.description.length > 100;
-
-  // Dialog handlers
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   return (
     <>
@@ -110,11 +104,28 @@ const EventCard = ({ event }) => {
           </Box>
 
         {/* Description Clamp */}
-<Typography variant="body2" color="text.primary" sx={clampStyle}>
-  {event.description}
-</Typography>
-{/* The 'Read More' button and its conditional rendering have been removed */}
-
+        <div
+          ref={descRef}
+          style={{
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: expanded ? 'none' : 1,
+            WebkitBoxOrient: 'vertical',
+            minHeight: '1.5em'
+          }}
+        >
+          {event.description}
+        </div>
+        {showButton && (
+          <Button
+            size="small"
+            onClick={() => setExpanded((prev) => !prev)}
+            sx={{ mt: 1, p: 0, minHeight: 0, minWidth: 0 }}
+          >
+            {expanded ? 'Read less' : 'Read more'}
+          </Button>
+        )}
           <Divider sx={{ my: 1 }} />
 
           {/* Footer with sponsorship, organizer, contact, etc */}
@@ -191,7 +202,7 @@ const EventCard = ({ event }) => {
       </Card>
 
       {/* Modal/Dialog for full description */}
-      <Dialog open={open} onClose={handleClose} maxWidth="sm" fullWidth>
+      <Dialog open={open} onClose={() => setOpen(false)} maxWidth="sm" fullWidth>
         <DialogTitle>Description</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -199,7 +210,7 @@ const EventCard = ({ event }) => {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary" autoFocus>
+          <Button onClick={() => setOpen(false)} color="primary" autoFocus>
             Close
           </Button>
         </DialogActions>
