@@ -41,7 +41,7 @@ const SearchBar = ({ onSearch }) => {
       >
         <InputBase
           sx={{ ml: 1, flex: 1 }}
-          placeholder="Search events by name, location, or description..."
+          placeholder="Search Events by Name, City, Location or Description..."
           inputProps={{ 'aria-label': 'search events' }}
           value={searchValue}
           onChange={handleSearchChange}
