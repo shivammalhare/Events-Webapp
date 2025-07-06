@@ -32,7 +32,7 @@ const Footer = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
               <EventIcon sx={{ mr: 1, color: 'primary.main' }} />
               <Typography variant="h6" color="text.primary" gutterBottom sx={{ fontWeight: 'bold' }}>
-                EVENT PLATFORM
+                REZO-EVENTS
               </Typography>
             </Box>
             <Typography variant="body2" color="text.secondary" paragraph>
@@ -108,7 +108,7 @@ const Footer = () => {
         
         <Box sx={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
           <Typography variant="body2" color="text.secondary">
-            &copy; {new Date().getFullYear()} Event Platform. All rights reserved.
+            &copy; {new Date().getFullYear()} REZO-EVENTS. All rights reserved.
           </Typography>
           <Box>
             <Link href="#" color="inherit" underline="hover" sx={{ px: 1 }}>

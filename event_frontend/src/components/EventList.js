@@ -27,6 +27,8 @@ const EventList = ({ events, loading, error, searchTerm }) => {
   const [selectedCountry, setSelectedCountry] = useState('All'); // Country filter
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedMonth, setSelectedMonth] = useState(null);
+  const [fromDate, setFromDate] = useState(null);
+  const [toDate, setToDate] = useState(null);
   const eventsPerPage = 9; // 3 cards per row
 
   // Helper to parse DD/MM/YYYY to JS Date
@@ -90,10 +92,19 @@ const EventList = ({ events, loading, error, searchTerm }) => {
         );
       });
     }
+    // Date range filter
+    if (fromDate || toDate) {
+      filtered = filtered.filter(event => {
+        const eventDate = parseEventDate(event.date);
+        if (fromDate && eventDate < new Date(fromDate.setHours(0,0,0,0))) return false;
+        if (toDate && eventDate > new Date(toDate.setHours(23,59,59,999))) return false;
+        return true;
+      });
+    }
 
     setFilteredEvents(filtered);
     setCurrentPage(1);
-  }, [events, searchTerm, eventType, selectedCountry, selectedDate, selectedMonth]);
+  }, [events, searchTerm, eventType, selectedCountry, selectedDate, selectedMonth, fromDate, toDate]);
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
@@ -113,7 +124,8 @@ const EventList = ({ events, loading, error, searchTerm }) => {
   const handleClearFilters = () => {
     setEventType('upcoming');
     setSelectedCountry('All');
-    setSelectedDate(null);
+    setFromDate(null);
+    setToDate(null);
     setSelectedMonth(null);
   };
 
@@ -147,9 +159,9 @@ const EventList = ({ events, loading, error, searchTerm }) => {
           flexWrap: 'wrap',
           alignItems: 'flex-start',
           justifyContent: 'space-between',
-          mb: 4,
-          mt: 1,
-          gap: 2
+          mb: '28px',
+          mt: 0,
+          gap: 0
         }}
       >
         {/* Heading */}
@@ -165,13 +177,24 @@ const EventList = ({ events, loading, error, searchTerm }) => {
         <Box
           sx={{
             display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            gap: 2,
+            flexWrap: 'nowrap',
+            alignItems: 'baseline', // Align inputs in one line, labels above
+            gap: 1,
+            width: '100%',
+            overflowX: 'auto',
           }}
         >
           {/* Event Type Toggle Buttons (no label) */}
-          <Paper elevation={0} sx={{ p: 0.5, boxShadow: 'none', background: 'none', minWidth: 180 }}>
+          <Paper
+            elevation={0}
+            sx={{
+              p: 0.5,
+              boxShadow: 'none',
+              background: 'none',
+              minWidth: 180,
+              mt: 3 // Push toggle group down to align with inputs
+            }}
+          >
             <ToggleButtonGroup
               id="event-type-toggle"
               value={eventType}
@@ -181,7 +204,7 @@ const EventList = ({ events, loading, error, searchTerm }) => {
               size="small"
             >
               <ToggleButton value="all" aria-label="all events">
-                All Events
+                All
               </ToggleButton>
               <ToggleButton value="upcoming" aria-label="upcoming events">
                 Upcoming
@@ -192,20 +215,43 @@ const EventList = ({ events, loading, error, searchTerm }) => {
             </ToggleButtonGroup>
           </Paper>
 
-          {/* Date Filter */}
-          <FormControl size="small" sx={{ minWidth: 180 }}>
+          {/* Date Range Filter (From/To) */}
+          <FormControl size="small" sx={{ minWidth: 220 }}>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
-                label="Filter by Date"
-                value={selectedDate}
-                onChange={(newValue) => setSelectedDate(newValue)}
+                label="From"
+                value={fromDate}
+                onChange={setFromDate}
                 slotProps={{
                   textField: {
                     size: 'small',
-                    fullWidth: true,
-                    InputLabelProps: { shrink: true }
+                    fullWidth: false,
+                    InputLabelProps: { shrink: true },
+                    sx: { minWidth: 100 }
                   }
                 }}
+                maxDate={toDate}
+              />
+            </LocalizationProvider>
+          </FormControl>
+          <Box sx={{ display: 'flex', alignItems: 'center', mb: 1, }}>
+            <Typography sx={{ mx: 0, color: 'text.secondary' }}>- </Typography>
+          </Box>
+          <FormControl size="small" sx={{ minWidth: 220 }}>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <DatePicker
+                label="To"
+                value={toDate}
+                onChange={setToDate}
+                slotProps={{
+                  textField: {
+                    size: 'small',
+                    fullWidth: false,
+                    InputLabelProps: { shrink: true },
+                    sx: { minWidth: 100 }
+                  }
+                }}
+                minDate={fromDate}
               />
             </LocalizationProvider>
           </FormControl>
@@ -252,7 +298,7 @@ const EventList = ({ events, loading, error, searchTerm }) => {
             onClick={handleClearFilters}
             sx={{ whiteSpace: 'nowrap', borderRadius: '24px', px: 2, height: 40 }}
           >
-            Clear Filters
+            Clear
           </Button>
         </Box>
       </Box>
