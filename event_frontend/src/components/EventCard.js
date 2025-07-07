@@ -7,12 +7,7 @@ import {
   Box,
   Chip,
   Grid,
-  Divider,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  DialogActions
+  Divider
 } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
@@ -25,7 +20,7 @@ import Linkify from 'linkify-react';
 
 
 const EventCard = ({ event }) => {
-  const [open, setOpen] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [charLimit, setCharLimit] = useState(160); // default for desktop
 
@@ -132,19 +127,20 @@ const EventCard = ({ event }) => {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               display: '-webkit-box',
-              WebkitLineClamp: showButton ? '1' : 'unset',
+              WebkitLineClamp: expanded ? 'unset' : 1,
               WebkitBoxOrient: 'vertical',
               flex: 1,
             }}
           >
-            {showButton
-              ? event.description.slice(0, charLimit) + (event.description.length > charLimit ? '…' : '')
-              : event.description}
+            {expanded || !showButton
+              ? event.description
+              : event.description.slice(0, charLimit) +
+                (event.description.length > charLimit ? '…' : '')}
           </Typography>
           {showButton && (
             <Button
               size="small"
-              onClick={() => setOpen(true)}
+              onClick={() => setExpanded((prev) => !prev)}
               sx={{
                 p: 0,
                 minHeight: 0,
@@ -155,7 +151,7 @@ const EventCard = ({ event }) => {
                 alignSelf: 'flex-start'
               }}
             >
-              Read more
+              {expanded ? 'Read less' : 'Read more'}
             </Button>
           )}
         </Box>
@@ -234,20 +230,6 @@ const EventCard = ({ event }) => {
         </CardContent>
       </Card>
 
-      {/* Modal/Dialog for full description */}
-      <Dialog open={open} onClose={() => setOpen(false)} maxWidth="sm" fullWidth>
-        <DialogTitle>Description</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            {event.description}
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={() => setOpen(false)} color="primary" autoFocus>
-            Close
-          </Button>
-        </DialogActions>
-      </Dialog>
     </>
   );
 };
