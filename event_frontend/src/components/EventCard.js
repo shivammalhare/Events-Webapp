@@ -26,7 +26,6 @@ import Linkify from 'linkify-react';
 
 const EventCard = ({ event }) => {
   const [open, setOpen] = useState(false);
-  const [expanded, setExpanded] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [charLimit, setCharLimit] = useState(160); // default for desktop
 
@@ -133,19 +132,19 @@ const EventCard = ({ event }) => {
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               display: '-webkit-box',
-              WebkitLineClamp: expanded ? 'none' : 1,
+              WebkitLineClamp: showButton ? '1' : 'unset',
               WebkitBoxOrient: 'vertical',
               flex: 1,
             }}
           >
-            {expanded || !showButton
-              ? event.description
-              : event.description.slice(0, charLimit) + (event.description.length > charLimit ? '…' : '')}
+            {showButton
+              ? event.description.slice(0, charLimit) + (event.description.length > charLimit ? '…' : '')
+              : event.description}
           </Typography>
-          {showButton && !expanded && (
+          {showButton && (
             <Button
               size="small"
-              onClick={() => setExpanded(true)}
+              onClick={() => setOpen(true)}
               sx={{
                 p: 0,
                 minHeight: 0,
